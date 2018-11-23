@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet-mapping>
+        <servlet-name>VisualizarFrota</servlet-name>
+        <url-pattern>/VisualizarFrota</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <description>
+      Aluguel de Carros
+    </description>
+    <display-name>Aluguel de Carros</display-name>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>web.servlet.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern/>
+    </servlet-mapping>
+    
+    <servlet>    
+        <servlet-name>Autenticar</servlet-name>
+        <servlet-class>web.servlet.Autenticar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Autenticar</servlet-name>
+        <url-pattern>/Autenticar.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Reservas</servlet-name>
+        <servlet-class>web.servlet.Reservas</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Reservas</servlet-name>
+        <url-pattern>/Reservas.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CadastroCarro</servlet-name>
+        <servlet-class>web.servlet.CadastrarCarro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroCarro</servlet-name>
+        <url-pattern>/CadastrarCarro.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CadastroCliente</servlet-name>
+        <servlet-class>web.servlet.CadastrarCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroCliente</servlet-name>
+        <url-pattern>/CadastrarCliente.action</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>VisualizarFrota</servlet-name>
+        <servlet-class>web.servlet.VisualizarFrota</servlet-class>
+    </servlet> 
+    <servlet-mapping>
+        <servlet-name>VisualizarFrota</servlet-name>
+        <url-pattern>/VisualizarFrota.action</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>ReservarCarro</servlet-name>
+        <servlet-class>web.servlet.ReservarCarro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReservarCarro</servlet-name>
+        <url-pattern>/ReservarCarro.action</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>Reservado</servlet-name>
+        <servlet-class>web.servlet.Reservado</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Reservado</servlet-name>
+        <url-pattern>/Reservado.action</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>AlugarCarro</servlet-name>
+        <servlet-class>web.servlet.AlugarCarro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlugarCarro</servlet-name>
+        <url-pattern>/AlugarCarro.action</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>Cadastrado</servlet-name>
+        <servlet-class>web.servlet.Cadastrado</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cadastrado</servlet-name>
+        <url-pattern>/Cadastrado.action</url-pattern>
+    </servlet-mapping>
+    
+   
+</web-app>
