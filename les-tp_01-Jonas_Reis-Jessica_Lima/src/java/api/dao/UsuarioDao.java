@@ -12,7 +12,7 @@ import java.util.List;
  * @author Aluno
  */
 public interface UsuarioDao {
-    public Usuario insert(Usuario usuario);
+    public void insert(Usuario usuario);
     public Usuario findById(Long id);
     public Usuario findByNomeUsuario(String nomeUsuario);
     public Usuario findByName(String name);

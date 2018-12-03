@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package api.modelo;
-import java.util.ArrayList;
 import java.util.List;
 /**
  *
@@ -102,6 +101,5 @@ public class Usuario extends Identificador{
 
     public void setCategoriaCnh(String categoriaCnh) {
         this.categoriaCnh = categoriaCnh;
-    }    
+    } 
 }
-

@@ -5,14 +5,13 @@
  */
 package api.servico;
 
-import api.modelo.Usuario;
+import api.modelo.Carro;
 
 /**
  *
  * @author Aluno
  */
-public interface ServicoUsuario {
-    public void insert(Usuario usuario);
-    public Usuario findByNomeUsuario(String nomeUsuario);
-   
+public interface ServicoCarro {
+    public void insert(Carro carro);
+    public Carro findByNomeCarro(String nomeCarro);
 }

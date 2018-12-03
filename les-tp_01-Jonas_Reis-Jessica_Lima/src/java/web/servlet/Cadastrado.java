@@ -27,9 +27,9 @@ import javax.servlet.http.HttpServletResponse;
 //@WebServlet(name = "Cadastrado", urlPatterns = {"/Cadastrado"})
 public class Cadastrado extends HttpServlet {
 @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
-         ArrayList<Papel> p = new ArrayList<>();
+        ArrayList<Papel> p = new ArrayList<>();
         p.add(new Papel(Long.MIN_VALUE, EnumPapeis.USUARIO));
         
         ServletContext context = req.getServletContext();

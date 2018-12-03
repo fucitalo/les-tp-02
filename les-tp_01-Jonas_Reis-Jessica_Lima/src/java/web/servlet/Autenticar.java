@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  *
  * @author Aluno
  */
-//@WebServlet(name = "Autenticar", urlPatterns = {"/Autenticar.action"})
+@WebServlet(name = "Autenticar", urlPatterns = {"/Autenticar.action"})
 public class Autenticar extends HttpServlet {   
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp){

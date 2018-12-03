@@ -21,10 +21,9 @@ import java.util.List;
  */
 public class Servico implements ServicoUsuario{
     @Override
-    public Usuario insert(Usuario usuario) {
-       UsuarioDao usuarioDao = new UsuarioDaoBd();
-       Usuario u = usuarioDao.insert(usuario);
-       return u; 
+    public void insert(Usuario usuario) {
+        UsuarioDao usuarioDao = new UsuarioDaoBd();
+        usuarioDao.insert(usuario);
     }
 
     @Override
