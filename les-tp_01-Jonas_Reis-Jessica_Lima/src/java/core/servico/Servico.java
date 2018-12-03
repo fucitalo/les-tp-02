@@ -22,7 +22,9 @@ import java.util.List;
 public class Servico implements ServicoUsuario{
     @Override
     public Usuario insert(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       UsuarioDao usuarioDao = new UsuarioDaoBd();
+       Usuario u = usuarioDao.insert(usuario);
+       return u; 
     }
 
     @Override

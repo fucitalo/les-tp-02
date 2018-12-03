@@ -5,8 +5,14 @@
  */
 package web.servlet;
 
+import api.modelo.EnumPapeis;
+import api.modelo.Papel;
+import api.modelo.Usuario;
+import api.servico.ServicoUsuario;
+import core.servico.Servico;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,11 +27,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CadastrarCliente", urlPatterns = {"/CadastrarCliente"})
 public class CadastrarCliente extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
-         ServletContext context = request.getServletContext();
+        ServletContext context = req.getServletContext();  
         try{
-        context.getRequestDispatcher("/dynamic/jsp/CadastroCliente.jsp").forward(request, response);            
+        context.getRequestDispatcher("/dynamic/jsp/CadastroCliente.jsp").forward(req, res);            
         } catch (Exception e){}
     }
 

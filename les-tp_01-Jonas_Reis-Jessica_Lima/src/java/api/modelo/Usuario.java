@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package api.modelo;
+import java.util.ArrayList;
 import java.util.List;
 /**
  *
@@ -15,17 +16,22 @@ public class Usuario extends Identificador{
     private String senha;
     private String nomeUsuario;
     private String email;
-    private String papeis;
+    private String cnh;
+    private String categoriaCnh;
+    private List<Papel> papeis;
+
     
     public Usuario(){}
     public Usuario(Long id, String nome, String senha,
-                   String nomeUsuario, String email,
-                   String papeis){
+                   String nomeUsuario, String email,String cnh,
+                   String categoriaCnh,List<Papel> papeis){
         super(id);
         this.setNome(nome);
         this.setSenha(senha);
         this.setNomeUsuario(nomeUsuario);
         this.setEmail(email);
+        this.setCnh(cnh);
+        this.setCategoriaCnh(categoriaCnh);
         this.setPapeis(papeis);               
     }
 
@@ -74,13 +80,28 @@ public class Usuario extends Identificador{
         this.email = email;
     }
 
-    public String getPapeis() {
+    public List<Papel> getPapeis() {
         return papeis;
     }
 
-    public void setPapeis(String papeis) {
+    public void setPapeis(List<Papel> papeis) {
         this.papeis = papeis;
     }
     
-    
+    public String getCnh() {
+        return cnh;
+    }
+
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
+    }
+
+    public String getCategoriaCnh() {
+        return categoriaCnh;
+    }
+
+    public void setCategoriaCnh(String categoriaCnh) {
+        this.categoriaCnh = categoriaCnh;
+    }    
 }
+
