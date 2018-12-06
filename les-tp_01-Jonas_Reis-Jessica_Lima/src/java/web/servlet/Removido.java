@@ -10,7 +10,6 @@ import api.servico.ServicoCarro;
 import core.servico.ServicoC;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,17 +21,19 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Aluno
  */
-@WebServlet(name = "ReservarCarro", urlPatterns = {"/ReservarCarro"})
-public class ReservarCarro extends HttpServlet {
-
+//@WebServlet(name = "Removido", urlPatterns = {"/Removido"})
+public class Removido extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse rep)
             throws ServletException, IOException {
-        ServletContext context = request.getServletContext();
+
+        ServletContext context = req.getServletContext();
+        long placa = Long.parseLong(req.getParameter("placa"));
+        ServicoCarro servicoCarro = new ServicoC();
+        servicoCarro.delete(placa);
+       
         try{
-        context.getRequestDispatcher("/dynamic/jsp/ReservarCarro.jsp").forward(request, response);            
+        context.getRequestDispatcher("/dynamic/jsp/Removido.jsp").forward(req, rep);            
         } catch (Exception e){}
     }
-
-
 }

@@ -22,7 +22,7 @@
               String[][] dados = {{"Luxo","2005","FDX1235","C4","Citroen","Preto","Novo","20000","100","Reservado"},
                   {"Popular","2001","ABF3654","Gol","Volkswagen","Verde","Usado","30000","120","Aguardando"}};
                 for(int i=0;i<2;i++){
-                    out.print(" <form class='formularios'> </p><label class='formLabel'>"+
+                    out.print(" <form class='formularios' action='AlugarCarro.action' method ='get'> </p><label class='formLabel'>"+
                     "Categoria:"+dados[i][0]+
                 "</label>"+
                 "</p>"+
@@ -79,8 +79,12 @@
                 "</label"+   
                 "</p>"+
                 "<a href='AlugarCarro.jsp'>" + 
-                "</br><input type='submit' class='botao' action='AlugarCarro.action' method='get' value='Alugar'/></a>"+
+                "</br><input type='submit' class='botao' action='AlugarCarro.action' method='get' value='Alugar'/></a></form>"+
+                "<form class='formularios' action='Remover.action' method ='post'>"+
                 "</br><a href='Removido.jsp'><input type='submit' class='botao' value='Excluir'/></a>" +
+                    "</form>"+
+                "<form class='formularios' action='Alterar.action' method ='post'>"+
+                "</br><input type='submit' class='botao' value='Alterar'/></a>" +
                     "</form>");
                     
                     

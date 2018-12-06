@@ -5,12 +5,8 @@
  */
 package web.servlet;
 
-import api.modelo.Carro;
-import api.servico.ServicoCarro;
-import core.servico.ServicoC;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,17 +18,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Aluno
  */
-@WebServlet(name = "ReservarCarro", urlPatterns = {"/ReservarCarro"})
-public class ReservarCarro extends HttpServlet {
 
+public class Alterar extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ServletContext context = request.getServletContext();
         try{
-        context.getRequestDispatcher("/dynamic/jsp/ReservarCarro.jsp").forward(request, response);            
+        context.getRequestDispatcher("/dynamic/jsp/Alterar.jsp").forward(request, response);            
         } catch (Exception e){}
     }
-
 
 }

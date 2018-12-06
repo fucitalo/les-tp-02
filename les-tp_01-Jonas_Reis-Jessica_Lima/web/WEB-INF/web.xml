@@ -104,5 +104,50 @@
         <url-pattern>/Cadastrado.action</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>CadastradoC</servlet-name>
+        <servlet-class>web.servlet.CadastradoC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastradoC</servlet-name>
+        <url-pattern>/CadastradoC.action</url-pattern>
+    </servlet-mapping>
+    
+   <servlet>
+        <servlet-name>Remover</servlet-name>
+        <servlet-class>web.servlet.Remover</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Remover</servlet-name>
+        <url-pattern>/Remover.action</url-pattern>
+    </servlet-mapping>
    
+   <servlet>
+        <servlet-name>Removido</servlet-name>
+        <servlet-class>web.servlet.Removido</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Removido</servlet-name>
+        <url-pattern>/Removido.action</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>AlterarCarro</servlet-name>
+        <servlet-class>web.servlet.AlterarCarro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarCarro</servlet-name>
+        <url-pattern>/AlterarCarro.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Alterar</servlet-name>
+        <servlet-class>web.servlet.Alterar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Alterar</servlet-name>
+        <url-pattern>/Alterar.action</url-pattern>
+    </servlet-mapping>
+    
+    
 </web-app>

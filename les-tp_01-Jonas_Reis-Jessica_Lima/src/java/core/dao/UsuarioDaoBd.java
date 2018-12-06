@@ -37,28 +37,14 @@ public class UsuarioDaoBd implements UsuarioDao{
     
     public void insert(Usuario usuario) {
        try{
+           System.out.println(usuario.getNome() +"','"+usuario.getSenha()+"','"+usuario.getNomeUsuario()+"','"+
+                    "','"+usuario.getEmail()+"','"+usuario.getCnh()+"','"+usuario.getCategoriaCnh()+"','1')");
             String sql = ("insert into web2.agenda(nome, senha, nomeUsuario, email, cnh, categoriaCnh, idPapel) "+
                     "values('"+usuario.getNome() +"','"+usuario.getSenha()+"','"+usuario.getNomeUsuario()+"','"+
-                    "','"+usuario.getEmail()+"','"+usuario.getCnh()+"','"+usuario.getCategoriaCnh()+"','"+usuario.getPapeis()+"')");                    
+                    usuario.getEmail()+"','"+usuario.getCnh()+"','"+usuario.getCategoriaCnh()+"','2')");                    
             PreparedStatement comandoSQLp = conexao.prepareStatement(sql);
             comandoSQLp.executeUpdate(sql);
             System.out.println("Conectado");
-            
-            
-            /*String sql = ("insert into web2.agenda(nome, senha, nomeUsuario, email, cnh, categoriaCnh, idPapel) "+
-                    "values(?,?,?,?,?,?,?)");                    
-            PreparedStatement comandoSQLp = conexao.prepareStatement(sql);
-            ResultSet rs = comandoSQLp.executeQuery();
-            System.out.println("Conectado");
-            rs.next();
-            //comandoSQLp.setInt(0, 0);
-            comandoSQLp.setString(1, usuario.getNome());
-            comandoSQLp.setString(2, usuario.getSenha());
-            comandoSQLp.setString(3, usuario.getNomeUsuario());
-            comandoSQLp.setString(4, usuario.getEmail());
-            comandoSQLp.setString(5, usuario.getCnh());
-            comandoSQLp.setString(6, usuario.getCategoriaCnh());
-            comandoSQLp.setInt(7, 1); */        
                 
             comandoSQLp.close();
             //rs.close();

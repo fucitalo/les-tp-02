@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Removido
-    Created on : 04/10/2018, 16:34:12
-    Author     : jonas
+    Document   : Alterado
+    Created on : 04/12/2018, 11:25:35
+    Author     : Aluno
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,10 +12,11 @@
          <link rel="stylesheet" type="text/css" href="static/css/Pagina.css">
         <link rel="stylesheet" type="text/css" href="static/css/Fonte.css">
        
-        <title>Removido</title>
+        <title>Alterado</title>
     </head>
     <body>
         <%@include file= "menu.jsp" %>  
-        <h2>Carro removido com sucesso!</h2>
+        <h2>Carro alterado com sucesso!</h2>
     </body>
 </html>
+

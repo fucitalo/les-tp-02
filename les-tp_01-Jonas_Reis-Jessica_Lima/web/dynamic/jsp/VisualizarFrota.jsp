@@ -15,63 +15,71 @@
     <body>
         <%@include file= "menu.jsp" %>  
           <% 
-              String[][] dados = {{"Luxo","2005","FDX1235","C4","Citroen","Preto","Novo","20000","100","Reservado"},
-                  {"Popular","2001","ABF3654","Gol","Volkswagen","Verde","Usado","30000","120","Aguardando"},
-                  {"Compacto","2013","GTD2651","HB20","Hyundai","Prata","Usado","19000","50","Disponível"}};
-                for(int i=0;i<3;i++){
+              String categoria = (String) request.getAttribute("categoria");
+              String ano = (String) request.getAttribute("ano");
+              long placa = (long) request.getAttribute("placa");
+              String modelo = (String) request.getAttribute("modelo");
+              String fabricante = (String) request.getAttribute("fabricante");
+              String cor = (String) request.getAttribute("cor");
+              String estadoConservacao = (String) request.getAttribute("estadoConservacao");
+              int quilometragem = (int) request.getAttribute("quilometragem");
+              int tanque = (int) request.getAttribute("tanque");
+                            
+              
+                for(int i=0;i<2;i++){
                     out.print("</p><label class='formLabel'>"+
-                    "</p>Categoria:"+dados[i][0]+
+                    "</p>Categoria:"+categoria+
                 "</label>"+
                 "</p>"+
                 "<label class='formLabel'>"+
-                "    Ano:"+dados[i][1]+
+                "    Ano:"+ano+
                     
                 "</label>"+   
                 "</p>"+
                 
                 "<label class='formLabel'>"+
-                "    Placa:"+dados[i][2]+
+                "    Placa:"+placa+
                     
                 "</label>"+
                 "</p>"+
                 "<label class='formLabel'>"+
-                "    Modelo:"+dados[i][3]+
+                "    Modelo:"+modelo+
                     
                 "</label>"+   
                 "</p>"+
                 
                 "<label class='formLabel'>"+
-                "    Fabricante:"+dados[i][4]+
+                "    Fabricante:"+fabricante+
                     
                 "</label>"+   
                 "</p>"+
                 
                 "<label class='formLabel'>"+
-                "    Cor:"+dados[i][5]+
+                "    Cor:"+cor+
                     
                 "</label>"+   
                 "</p>"+
                 
                 "<label class='formLabel'>"+
-                "    Estado de conservação:"+dados[i][6]+
+                "    Estado de conservação:"+ estadoConservacao+
                     
                 "</label>"+   
                 "</p>"+
                 
                 "<label class='formLabel'>"+
-                "    Quilometragem:"+dados[i][7]+
+                "    Quilometragem:"+ quilometragem+
                     
                 "</label>"+   
                 "</p>"+
                 
                 "<label class='formLabel'>"+
-                "    Tanque de combustível:"+dados[i][8]+
+                "    Tanque de combustível:"+ tanque+
                     
                 "</label>"+   
                 "</p>"+
                         
                 "</p><label class='formLabel'>"+
-                "    Situação:"+dados[i][9]+
+                "    Situação:"+//dados[i][9]+
                     
                 "</label>"+   
                 "</p><br>"

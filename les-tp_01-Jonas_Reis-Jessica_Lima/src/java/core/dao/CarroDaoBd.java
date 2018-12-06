@@ -43,17 +43,6 @@ public class CarroDaoBd implements CarroDao{
             PreparedStatement comandoSQLp = conexao.prepareStatement(sql);
             comandoSQLp.executeUpdate(sql);
             System.out.println("Conectado");
-            //rs.next();
-            //comandoSQLp.setInt(0, 0);
-            /*comandoSQLp.setString(0, carro.getCategoria());
-            comandoSQLp.setString(1, carro.getAno());
-            comandoSQLp.setString(2, carro.getModelo());
-            comandoSQLp.setString(3, carro.getFabricante());
-            comandoSQLp.setString(4, carro.getCor());
-            comandoSQLp.setString(5, carro.getEstado_conservacao());
-            comandoSQLp.setInt(6, carro.getQuilometragem());
-            comandoSQLp.setInt(7, carro.getTanque());
-            comandoSQLp.setLong(8, carro.getPlaca());  */      
                            
             comandoSQLp.close();
             //rs.close();
@@ -77,8 +66,8 @@ public class CarroDaoBd implements CarroDao{
 
     @Override
     public List<Carro> findAll() {
-        Carro c = null;
-        List<Carro> lista = new ArrayList<Carro>();
+        Carro c;
+        List<Carro> lista = new ArrayList<>();
         try{   
             PreparedStatement comandoSQLp = conexao.prepareStatement("select * from web2.carro");  
             ResultSet rs = comandoSQLp.executeQuery();
@@ -86,21 +75,21 @@ public class CarroDaoBd implements CarroDao{
             
             while (rs.next()) {
                 c = new Carro();
-                c.setCategoria(rs.getString(0));
-                c.setAno(rs.getString(1));
-                c.setModelo(rs.getString(2));                
-                c.setFabricante(rs.getString(3));
-                c.setCor(rs.getString(4));
-                c.setEstado_conservacao(rs.getString(5));
-                c.setQuilometragem(rs.getInt(6));
-                c.setTanque(rs.getInt(7));
-                c.setPlaca(rs.getLong(8));
+                c.setCategoria(rs.getString("categoria"));
+                c.setAno(rs.getString("ano"));
+                c.setModelo(rs.getString("modelo"));                
+                c.setFabricante(rs.getString("fabricante"));
+                c.setCor(rs.getString("cor"));
+                c.setEstado_conservacao(rs.getString("estadoConservacao"));
+                c.setQuilometragem(rs.getInt("quilometragem"));
+                c.setTanque(rs.getInt("tanque"));
+                c.setPlaca(rs.getLong("placa"));
                 lista.add(c);
-                for(Carro c1:lista){
-                    System.out.println(c1.getModelo()+"\n"+c1.getFabricante());
-                }
+                
             }            
-           
+            /*for(Carro c1:lista){
+                    System.out.println(c1.getModelo()+"\n"+c1.getFabricante());
+            }*/
             comandoSQLp.close();
             rs.close();
 
@@ -108,7 +97,7 @@ public class CarroDaoBd implements CarroDao{
         }           
         catch (Exception e)
         {
-          System.out.print("\nErro de busca por usuário\n");
+          System.out.print("\nErro de busca por todos\n");
         }
         return lista;
     }
@@ -119,13 +108,85 @@ public class CarroDaoBd implements CarroDao{
     }
 
     @Override
-    public boolean delete(Carro carro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(Long placa) {
+        try{              
+            String sql = ("delete from web2.carro where placa='"+placa+"'");                    
+            PreparedStatement comandoSQLp = conexao.prepareStatement(sql);
+            comandoSQLp.executeUpdate(sql);
+            System.out.println("Conectado");
+                           
+            comandoSQLp.close();
+            //rs.close();
+            
+        }
+        catch (Exception e)
+        {
+            System.out.print("\nErro de inserção\n");
+        } 
+        
+        
     }
 
     @Override
-    public boolean delete(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Carro findByCategoria(String categoria) {
+        Carro c=null;
+        try{   
+            PreparedStatement comandoSQLp = conexao.prepareStatement("select * from web2.carro where categoria='" + categoria + "'");
+            ResultSet rs = comandoSQLp.executeQuery();
+            System.out.println("Dados carregados");
+
+            rs.next();
+            c = new Carro();
+            c.setCategoria(rs.getString("categoria"));
+            c.setAno(rs.getString("ano"));
+            c.setModelo(rs.getString("modelo"));
+            c.setFabricante(rs.getString("fabricante"));
+            c.setCor(rs.getString("cor"));
+            c.setEstado_conservacao(rs.getString("estadoConservacao"));
+            c.setQuilometragem(rs.getInt("quilometragem"));
+            c.setTanque(rs.getInt("tanque"));
+            c.setPlaca(rs.getLong("placa"));
+            
+            comandoSQLp.close();
+            rs.close();
+
+            return c;
+        } catch (Exception e) {
+            System.out.print("\nErro de busca por categoria\n");
+        }
+        return c;
+    
+    }
+
+    @Override
+    public Carro findByPlaca(long placa) {
+      Carro c=null;
+        try{   
+            PreparedStatement comandoSQLp = conexao.prepareStatement("select * from web2.carro where placa='" + placa + "'");
+            ResultSet rs = comandoSQLp.executeQuery();
+            System.out.println("Dados carregados");
+
+            rs.next();
+            c = new Carro();
+            c.setCategoria(rs.getString("categoria"));
+            c.setAno(rs.getString("ano"));
+            c.setModelo(rs.getString("modelo"));
+            c.setFabricante(rs.getString("fabricante"));
+            c.setCor(rs.getString("cor"));
+            c.setEstado_conservacao(rs.getString("estadoConservacao"));
+            c.setQuilometragem(rs.getInt("quilometragem"));
+            c.setTanque(rs.getInt("tanque"));
+            c.setPlaca(rs.getLong("placa"));
+            
+            comandoSQLp.close();
+            rs.close();
+
+            return c;
+        } catch (Exception e) {
+            System.out.print("\nErro de busca por placa\n");
+        }
+        return c;
+     
     }
     
 }

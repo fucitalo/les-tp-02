@@ -15,23 +15,23 @@
     </head>
     <body>
         <%@include file= "menu.jsp" %>  
-        <form class="baseForm" action="Cadastrado.action" method="get">
+        <form class="baseForm" action="CadastradoC.action" method="post">
                 <input name=uid id=codigo02 type="hidden" value="1"/>
                 <label class="formLabel">
                     Categoria:
                     <select id="select01" name="categoria" size="1">
-                        <option value="ec">Econômico</option>
-                        <option value="co">Compacto</option>
-                        <option value="st">Standard</option>
-                        <option value="lx">Luxo</option>
-                        <option value="mv">Minivan</option>
-                        <option value="suv">SUV</option>
-                        <option value="fs">Full Size</option>
-                        <option value="in">Intermediário</option>
-                        <option value="ut">Utilitário</option>
-                        <option value="pr">Premium</option>
-                        <option value="esp">Especial</option>
-                        <option value="van">Van</option>
+                        <option value="Econômico">Econômico</option>
+                        <option value="Compacto">Compacto</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Luxo">Luxo</option>
+                        <option value="Minivan">Minivan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Full Size">Full Size</option>
+                        <option value="Intermediário">Intermediário</option>
+                        <option value="Utilitário">Utilitário</option>
+                        <option value="Premium">Premium</option>
+                        <option value="Especial">Especial</option>
+                        <option value="Van">Van</option>
                     </select>
                 </label>
                 </p>

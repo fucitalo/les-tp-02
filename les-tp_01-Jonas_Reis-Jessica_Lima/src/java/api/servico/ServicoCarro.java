@@ -6,6 +6,7 @@
 package api.servico;
 
 import api.modelo.Carro;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,8 @@ import api.modelo.Carro;
 public interface ServicoCarro {
     public void insert(Carro carro);
     public Carro findByNomeCarro(String nomeCarro);
+    public Carro findByCategoria(String categoria);
+    public Carro findByPlaca(long placa);
+    public List<Carro> findAll();
+    public void delete(Long placa);
 }

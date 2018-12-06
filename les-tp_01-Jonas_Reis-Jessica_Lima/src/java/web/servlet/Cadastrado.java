@@ -42,7 +42,7 @@ public class Cadastrado extends HttpServlet {
         Usuario u = new Usuario(Long.MIN_VALUE, nome, senha, nomeUsuario, email, cnh, catCnh, p);
         ServicoUsuario servicoUsuario = new Servico();
         servicoUsuario.insert(u);
-       
+        //System.out.println(nomeUsuario);
         try{
         context.getRequestDispatcher("/dynamic/jsp/Cadastrado.jsp").forward(req, res);            
         } catch (Exception e){}

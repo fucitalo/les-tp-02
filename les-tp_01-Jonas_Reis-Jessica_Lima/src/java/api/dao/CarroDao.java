@@ -16,8 +16,10 @@ public interface CarroDao {
     public void insert(Carro carro);
     public Carro findById(Long id);
     public Carro findByNomeCarro(String nomeCarro);
+    public Carro findByCategoria(String categoria);
+    public Carro findByPlaca(long placa);
     public List<Carro> findAll();
     public Carro update(Carro CarroAntigo, Carro carroAtual);
-    public boolean delete(Carro carro);
-    public boolean delete(Long id);
+    //public boolean delete(Carro carro);
+    public void delete(Long placa);
 }

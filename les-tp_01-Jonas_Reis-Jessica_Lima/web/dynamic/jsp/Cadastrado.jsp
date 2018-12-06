@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="static/css/Fonte.css">
         <link rel="stylesheet" type="text/css" href="static/css/Pagina.css">
-        <title>JSP Page</title>
+        <title>Cadastrado</title>
     </head>
     <body>
         <%@include file= "menu.jsp" %>  

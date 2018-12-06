@@ -36,6 +36,11 @@
                 </p>
                 <input type="submit" class="botao" id="btnLogin" value="Enviar"/>
             </form>
+            <% 
+            if ( request.getAttribute("falhaAutenticacao")!=null )%>
+                <input name=login id=login type="hidden" value="1"/>
+                <% //out.print("<p class=\"warning\"> Usuário ou senha inválidos.</p>"); 
+            %>  
 	</center>
     </body>
 </html>

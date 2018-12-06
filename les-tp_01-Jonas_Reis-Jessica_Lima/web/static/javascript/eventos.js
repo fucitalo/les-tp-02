@@ -4,13 +4,21 @@
  * and open the template in the editor.
  */
 
-function mudarCor(id){   
-    window.alert("Você clicou em: " + id.toString());
+function mensagem(){   
+    window.alert("Olá!");
 }
 
 window.onload = function(){ 
+    //lblLogin = document.getElementById('login');
     btnLogin = document.getElementById('btnLogin');
     btnLogin.addEventListener('click', function(){mudarCor('btnLogin');}, false);
+    
 };
+/*
+lblLogin.onload= function (){
+    btnLogin = document.getElementById('btnLogin');
+    btnLogin.addEventListener('click', function(){mensagem();}, false);
+};*/
+
 
 

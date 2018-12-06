@@ -9,6 +9,7 @@ import api.DAO.CarroDao;
 import api.modelo.Carro;
 import api.servico.ServicoCarro;
 import core.DAO.CarroDaoBd;
+import java.util.List;
 
 /**
  *
@@ -26,6 +27,34 @@ public class ServicoC implements ServicoCarro{
     public Carro findByNomeCarro(String nomeCarro) {
         CarroDao carroDao = new CarroDaoBd();
         Carro c = carroDao.findByNomeCarro(nomeCarro);
+        return c;
+    }
+
+    @Override
+    public List<Carro> findAll() {
+        CarroDao carroDao = new CarroDaoBd();
+        List<Carro> c = carroDao.findAll();
+        return c;
+    }
+
+    @Override
+    public Carro findByCategoria(String categoria) {
+        CarroDao carroDao = new CarroDaoBd();
+        Carro c = carroDao.findByCategoria(categoria);
+        return c;    
+    }
+
+    @Override
+    public void delete(Long placa) {
+        CarroDao carroDao = new CarroDaoBd();
+        carroDao.delete(placa);
+        
+    }
+
+    @Override
+    public Carro findByPlaca(long placa) {
+        CarroDao carroDao = new CarroDaoBd();
+        Carro c = carroDao.findByPlaca(placa);
         return c;
     }
     

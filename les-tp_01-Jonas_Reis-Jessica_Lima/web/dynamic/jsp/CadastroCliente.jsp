@@ -15,11 +15,11 @@
     </head>
     <body>
         <%@include file= "menu.jsp" %>  
-        <form class="baseForm" action="Cadastrado.action" method="get">
+        <form class="baseForm" action="Cadastrado.action" method="post">
                 <input name=uid id=codigo02 type="hidden" value="1"/>
                 <label class="formLabel">
                     Nome de usuário:
-                    <input name="usuario" type="usuario" required class="formInput formTextInput">
+                    <input name="nomeUsuario" type="usuario" required class="formInput formTextInput">
                 </label>
                 </p>
                 <label class="formLabel">
@@ -35,17 +35,17 @@
                 </p>
                 <label class="formLabel">
                     Email:
-                    <input name="email" type="text" required class="formInput formTextInput">
+                    <input name="email" type="text" class="formInput formTextInput">
                 </label>
                 </p>
                 <label class="formLabel">
                     CNH:
-                    <input name="cnh" type="text" required class="formInput formTextInput">
+                    <input name="cnh" type="text" class="formInput formTextInput">
                 </label>
                 </p>
                 <label class="formLabel">
                     Categoria CNH:
-                    <input name="catCnh" type="text" required class="formInput formTextInput">
+                    <input name="catCnh" type="text" class="formInput formTextInput">
                 </label>
                 
                <input type='submit' class='botao' value='Cadastrar'/>
