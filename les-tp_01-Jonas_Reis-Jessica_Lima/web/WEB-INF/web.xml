@@ -149,5 +149,13 @@
         <url-pattern>/Alterar.action</url-pattern>
     </servlet-mapping>
     
-    
+    <servlet>
+        <servlet-name>Alterado</servlet-name>
+        <servlet-class>web.servlet.Alterado</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Alterado</servlet-name>
+        <url-pattern>/Alterado.action</url-pattern>
+    </servlet-mapping>
+
 </web-app>

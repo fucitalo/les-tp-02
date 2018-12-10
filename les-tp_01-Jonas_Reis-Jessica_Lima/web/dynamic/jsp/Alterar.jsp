@@ -16,7 +16,7 @@
     <body>
         <%@include file= "menu.jsp" %>  
     <center>
-        <form class="baseForm" action="AlterarCarro.action" method="post">
+        <form class="baseForm" action="AlterarCarro.action" method="get">
             <input name=uid id=codigo01 type="hidden" value="1"/>
             <label class="formLabel">
                 Digite a placa do carro a ser alterado:

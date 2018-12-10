@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+var num=0;
 function mensagem(){   
-    window.alert("Olá!");
+    window.alert("Olá!Você clicou "+num+" vezes");
+    num++;
 }
 
 window.onload = function(){ 
     //lblLogin = document.getElementById('login');
     btnLogin = document.getElementById('btnLogin');
-    btnLogin.addEventListener('click', function(){mudarCor('btnLogin');}, false);
+    btnLogin.addEventListener('click', function(){mensagem('btnLogin');}, false);
     
 };
 /*

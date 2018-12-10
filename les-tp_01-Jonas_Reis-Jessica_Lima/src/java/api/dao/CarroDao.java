@@ -19,7 +19,7 @@ public interface CarroDao {
     public Carro findByCategoria(String categoria);
     public Carro findByPlaca(long placa);
     public List<Carro> findAll();
-    public Carro update(Carro CarroAntigo, Carro carroAtual);
+    public void update(String placa, Carro carroAtual);
     //public boolean delete(Carro carro);
     public void delete(Long placa);
 }

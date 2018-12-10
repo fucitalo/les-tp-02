@@ -30,6 +30,15 @@ body {
 }
 
 
+@media (max-width: 500px) 
+{
+  .baseForm{ 
+    border: 2px solid #5E2F37;
+    color: #BC2F37;
+}
+}
+
+
 
 
 

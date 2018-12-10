@@ -19,4 +19,5 @@ public interface ServicoCarro {
     public Carro findByPlaca(long placa);
     public List<Carro> findAll();
     public void delete(Long placa);
+    public void update(String placa, Carro carroAtual);
 }

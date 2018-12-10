@@ -57,5 +57,11 @@ public class ServicoC implements ServicoCarro{
         Carro c = carroDao.findByPlaca(placa);
         return c;
     }
+
+    @Override
+    public void update(String placa, Carro carroAtual) {
+        CarroDao carroDao = new CarroDaoBd();
+        carroDao.update(placa, carroAtual);
+    }
     
 }

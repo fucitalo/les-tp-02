@@ -55,4 +55,20 @@ and open the template in the editor.
 }
 
 
+@media (max-width: 500px) 
+{
+  .formTitulo{
+    font-size: 40px;
+    font-family: GeosansLight;
+    font-weight: bold;
+}
+
+.formLabel {
+    font-size: 30px;
+    font-family: GeosansLight;
+}
+}
+
+
+
 

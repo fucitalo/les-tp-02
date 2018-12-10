@@ -103,8 +103,26 @@ public class CarroDaoBd implements CarroDao{
     }
 
     @Override
-    public Carro update(Carro CarroAntigo, Carro carroAtual) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(String placa, Carro carroAtual) {
+         try{    
+            
+            String sql = ("update web2.carro set categoria='"+carroAtual.getCategoria() +"', ano='"+carroAtual.getAno()+
+                    "', modelo='"+carroAtual.getModelo()+"', fabricante='"+carroAtual.getFabricante()+"', cor='"+carroAtual.getCor()+
+                    "', estadoConservacao='"+carroAtual.getEstado_conservacao()+"', quilometragem='"+carroAtual.getQuilometragem()+
+                    "', tanque='"+carroAtual.getTanque()+"', placa='"+carroAtual.getPlaca()+"'where placa='"+placa+"';");                    
+            PreparedStatement comandoSQLp = conexao.prepareStatement(sql);
+            comandoSQLp.executeUpdate(sql);
+            System.out.println("Conectado");
+                           
+            comandoSQLp.close();
+            //rs.close();
+        }
+        catch (Exception e)
+        {
+            System.out.print("\nErro de inserção\n");
+        } 
+
+        
     }
 
     @Override

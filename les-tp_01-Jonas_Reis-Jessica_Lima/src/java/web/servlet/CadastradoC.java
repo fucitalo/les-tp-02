@@ -42,6 +42,7 @@ public class CadastradoC extends HttpServlet {
         String estadoConservacao = req.getParameter("estadoConservacao");
         String quilometragem = req.getParameter("quilometragem");
         String tanque = req.getParameter("tanque");
+        
         Carro c = new Carro(categoria, ano, modelo, fabricante, cor, estadoConservacao, Integer.parseInt(quilometragem), 
                 Integer.parseInt(tanque), Long.parseLong(placa));
         ServicoCarro servicoCarro = new ServicoC();
