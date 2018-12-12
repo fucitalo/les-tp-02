@@ -15,8 +15,6 @@
     </head>
     <body>
         <%@include file= "menu.jsp" %>
-        <center>
-        <p class='formLabel'>Carro reservado com sucesso!</p>
-        </center>
+        <h2>Carro reservado com sucesso!</h2>
     </body>
 </html>

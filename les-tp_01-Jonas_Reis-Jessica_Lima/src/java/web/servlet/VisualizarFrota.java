@@ -8,8 +8,10 @@ package web.servlet;
 import api.modelo.Carro;
 import api.servico.ServicoCarro;
 import core.servico.ServicoC;
+import java.io.Console;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -27,8 +29,10 @@ public class VisualizarFrota extends HttpServlet {
             throws ServletException, IOException {
          ServletContext context = request.getServletContext();
          ServicoCarro servicoCarro = new ServicoC();
-         List<Carro> carro = servicoCarro.findAll(); 
-         for(int i=0;i<carro.size();i++){            
+         List<Carro> carro = servicoCarro.findAll();
+         List<String> categoria = new ArrayList<>();
+         for(int i=0;i<carro.size();i++){
+            //categoria.add(carro.get(i).getCategoria());
             request.setAttribute("categoria", carro.get(i).getCategoria());
             request.setAttribute("ano", carro.get(i).getAno());
             request.setAttribute("modelo", carro.get(i).getModelo());
@@ -39,6 +43,7 @@ public class VisualizarFrota extends HttpServlet {
             request.setAttribute("tanque", carro.get(i).getTanque());
             request.setAttribute("placa", carro.get(i).getPlaca());  
          }
+                     request.setAttribute("carro", (List)carro);
         try{
         context.getRequestDispatcher("/dynamic/jsp/VisualizarFrota.jsp").forward(request, response);            
         } catch (Exception e){}

@@ -11,11 +11,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="static/css/Pagina.css">
         <link rel="stylesheet" type="text/css" href="static/css/Fonte.css">
+        <script src="static/javascript/eventos.js"></script>
         <title>RentCar Aluguel de carros</title>
     </head>
     <body>   
        <% Usuario u = (Usuario)request.getAttribute("usuarioLogado"); %> 
        <%@include file= "menu.jsp" %>  
-       <center> Seja bem-vindo! Escolha no menu a opção desejada. </center>
+       <center> <label id='inicio'>Seja bem-vindo! Escolha no menu a opção desejada. </label></center>
     </body>
 </html>

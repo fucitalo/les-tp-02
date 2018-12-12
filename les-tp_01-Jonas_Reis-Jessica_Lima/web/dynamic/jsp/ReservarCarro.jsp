@@ -4,6 +4,9 @@
     Author     : Aluno
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="api.modelo.Carro"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,93 +19,37 @@
     <body>
         <%@include file= "menu.jsp" %>  
           <% 
-              String[][] dados = {{"Compacto","2013","GTD2651","HB20","Hyundai","Prata","Usado","19000","50","Disponível","54,00"}};
-                for(int i=0;i<1;i++){
-                    out.print("</p><label class='formLabel'>"+
-                                 "<select id='select01' name='categoria' size='1'>" +
-                        "<option value='ec'>Econômico</option>" +
-                        "<option value='co'>Compacto</option>" +
-                        "<option value='st'>Standard</option>" +
-                        "<option value='lx'>Luxo</option>" +
-                        "<option value='mv'>Minivan</option>" +
-                        "<option value='su'>SUV</option>" +
-                        "<option value='fs'>Full Size</option>" +
-                        "<option value='in'>Intermediário</option>" +
-                        "<option value='ut'>Utilitário</option>" +
-                        "<option value='pr'>Premium</option>" +
-                        "<option value='esp'>Especial</option>" +
-                        "<option value='van'>Van</option>" +
-                    "</select>" +
-                "</label>" +
-                "</p>" +
-                "</p>Categoria:" + dados[i][0]+
-                "</label>"+
-                "</p>"+
-                "<label class='formLabel'>"+
-                "    Ano:"+dados[i][1]+
-                    
-                "</label>"+   
-                "</p>"+
-                
-                "<label class='formLabel'>"+
-                "    Placa:"+dados[i][2]+
-                    
-                "</label>"+
-                "</p>"+
-                "<label class='formLabel'>"+
-                "    Modelo:"+dados[i][3]+
-                    
-                "</label>"+   
-                "</p>"+
-                
-                "<label class='formLabel'>"+
-                "    Fabricante:"+dados[i][4]+
-                    
-                "</label>"+   
-                "</p>"+
-                
-                "<label class='formLabel'>"+
-                "    Cor:"+dados[i][5]+
-                    
-                "</label>"+   
-                "</p>"+
-                
-                "<label class='formLabel'>"+
-                "    Estado de conservação:"+dados[i][6]+
-                    
-                "</label>"+   
-                "</p>"+
-                
-                "<label class='formLabel'>"+
-                "    Quilometragem:"+dados[i][7]+
-                    
-                "</label>"+   
-                "</p>"+
-                
-                "<label class='formLabel'>"+
-                "    Tanque de combustível:"+dados[i][8]+
-                    
-                "</label>"+   
-                "</p>"+
-                        
-                "</p><label class='formLabel'>"+
-                "    Situação:"+dados[i][9]+
-                    
-                "</label>"+   
-                "</p>"+
-                        
-                "</p><label class='formLabel'>"+
-                "    Valor antecipado:"+dados[i][10]+
-                    
-                "</label>"+ 
-                        
-                "<a href='Reservado.jsp'><input type='submit' class='botao' value='Reservar'/></a>"
-                
-                    );
-                    
-                    
-                }
-            %>
+              String categoria = (String) request.getAttribute("categoria");
+        String ano = (String) request.getAttribute("ano");
+        long placa = (long) request.getAttribute("placa");
+        String modelo = (String) request.getAttribute("modelo");
+        String fabricante = (String) request.getAttribute("fabricante");
+        String cor = (String) request.getAttribute("cor");
+        String estadoConservacao = (String) request.getAttribute("estadoConservacao");
+        int quilometragem = (int) request.getAttribute("quilometragem");
+        int tanque = (int) request.getAttribute("tanque");
+
+        //categoria = ((ArrayList<String>)request.getAttribute("categoria"));
+         List<Carro> carro =   new ArrayList<Carro>();
+        carro = ((ArrayList<Carro>)request.getAttribute("carro"));
+        for(Carro c:carro){
+            out.println("Categoria: "+c.getCategoria()+"<br>");
+            out.println("Ano: "+c.getAno()+"<br>");
+            out.println("Placa: "+c.getPlaca()+"<br>");
+            out.println("Modelo: "+c.getModelo()+"<br>");
+            out.println("Fabricante: "+c.getFabricante()+"<br>");
+            out.println("Cor: "+c.getCor()+"<br>");
+            out.println("Estado de conservação: "+c.getEstado_conservacao()+"<br>");
+            out.println("Quilometragem: "+c.getQuilometragem()+"<br>");
+            out.println("Tanque: "+c.getTanque()+"<br>");
+            out.println("<br>"+"<form class='formularios' action='Reservado.action' method ='get'>"+
+                "</br><input type='submit' class='botao' value='Reservar'/></a>" +
+                    "</form>");
+            
+            
+        }
+
+          %>
          
                 
                 
